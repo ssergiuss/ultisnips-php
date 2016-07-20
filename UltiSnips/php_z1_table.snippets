@@ -1,0 +1,37 @@
+priority -40
+
+snippet zentity "Zend1 / Model / Table" b
+<?php
+/**
+ * This file is part of the Partfiniti package.
+ *
+ * @copyright Copyright (c) 2016 Partfiniti Inc. (https://www.partfiniti.com)
+ */
+
+/**
+ * `!p snip.rv = snip.basename` Table
+ *
+ * @author Sergiu-Ioan Ungur
+ *
+ * @see Zend_Db_Table_Abstract
+ */
+class ${1}_`!p snip.rv = snip.basename or "Table"` extends Zend_Db_Table_Abstract
+{
+	/**
+	 * {@inheritdoc}
+	 */
+	protected $_primary = ${2};
+
+	/**
+	 * {@inheritdoc}
+	 */
+	protected $_name = '${3}';
+
+	/**
+	 * {@inheritdoc}
+	 */
+	protected $_rowClass = '${4}';
+
+	${0}
+}
+endsnippet
