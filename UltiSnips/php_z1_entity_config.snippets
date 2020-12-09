@@ -1,0 +1,35 @@
+priority -40
+
+snippet zentconfig "Zend1 / Model / Repository" b
+<?php
+/**
+ * This file is part of the Partfiniti package.
+ *
+ * @copyright Copyright (c) 2020 Partfiniti Inc. (https://www.partfiniti.com)
+ */
+
+/**
+ * ${1} Config
+ *
+ * @author Sergiu-Ioan Ungur
+ *
+ * @see ${2:Base_V2_EntityConfig}
+ */
+class ${3}_`!p snip.rv = snip.basename or "EntityConfig"` extends ${2:Base_V2_EntityConfig}
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected function initOptions()
+    {
+        parent::initOptions();
+
+        $this->extendOptions([
+            'entity_name'  => '${4}',
+            'entity_class' => '${5}'
+        ]);
+
+        return $this;
+    }
+}
+endsnippet
