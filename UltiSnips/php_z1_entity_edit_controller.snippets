@@ -1,0 +1,50 @@
+priority -40
+
+snippet zmanager "Zend1 / Controller / EntityEditController" b
+<?php
+/**
+ * This file is part of the Partfiniti package.
+ *
+ * @copyright Copyright (c) 2020 Partfiniti Inc. (https://www.partfiniti.com)
+ */
+
+/**
+ * ${1} Edit Controller
+ *
+ * @author Sergiu-Ioan Ungur
+ *
+ * @see ${2:Base_EntityController}
+ */
+class ${3}_`!p snip.rv = snip.basename or "EntityEditController"` extends ${2:Base_EntityController}
+{
+    /**
+     * Save (create/update) ${4}.
+     *
+     * Request method: POST.
+     * Response type: JSON.
+     */
+    public function saveAction()
+    {
+        return $this->saveRecord();
+    }
+
+    /**
+     * Remove ${5}.
+     *
+     * Request method: POST.
+     * Response type: JSON.
+     */
+    public function removeAction()
+    {
+        return $this->removeRecords();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getEntityConfig()
+    {
+        return Utils_Class::get('${6}');
+    }
+}
+endsnippet
