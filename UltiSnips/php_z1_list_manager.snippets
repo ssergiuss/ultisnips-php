@@ -1,0 +1,95 @@
+priority -40
+
+snippet zlistmanager "Zend1 / Manager / EntityListManager" b
+<?php
+/**
+ * This file is part of the Partfiniti package.
+ *
+ * @copyright Copyright (c) 2020 Partfiniti Inc. (https://www.partfiniti.com)
+ */
+
+/**
+ * ${1} List Manager
+ *
+ * @see ${2:Base_EntityListManager}
+ */
+class ${3}_`!p snip.rv = snip.basename or "EntityListManager"` extends ${2:Base_EntityListManager}
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected function getBaseSelect(array $fields = null, $group = null)
+    {
+				// TODO
+        return parent::getBaseSelect($fields, $group)
+            ->join('company', 'company.id = ' . $this->table . '.company_id', []);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getFields()
+    {
+				// TODO
+        return [
+            'id'           => $this->table . '.id',
+            'name'         => $this->table . '.name',
+            'company_name' => 'company.name'
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getFieldsMapping()
+    {
+				// TODO
+        return [
+            'company_address_name' => 'company.address_name'
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getSortField()
+    {
+        // TODO
+        return [
+            'name'
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getSortDir()
+    {
+        // TODO
+        return [
+            'asc'
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getSearchFields()
+    {
+        // TODO
+        return [
+            'email',
+            'name',
+            'company_name'
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getEntityConfig()
+    {
+        return Utils_Class::get('${4}');
+    }
+}
+endsnippet
