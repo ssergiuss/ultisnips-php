@@ -1,0 +1,40 @@
+priority -40
+
+snippet zecontrollerhelper "Zend1 / Controller / EntityControllerHelper" b
+<?php
+/**
+ * This file is part of the Partfiniti package.
+ *
+ * @copyright Copyright (c) 2020 Partfiniti Inc. (https://www.partfiniti.com)
+ */
+
+/**
+ * ${1} Controller Helper
+ *
+ * @author Sergiu-Ioan Ungur
+ *
+ * @see ${2:Base_EntityControllerHelper}
+ */
+class ${3}_ControllerHelper_`!p snip.rv = snip.basename or "Entity"` extends ${2:Base_EntityControllerHelper}
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected function preProcessRecordData(array $data)
+    {
+				// TODO
+        return array_merge($data, [
+            'company_id' => $this->company->id,
+            'user_id'    => $this->user->id
+        ]);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getEntityConfig()
+    {
+        return Utils_Class::get('${4}');
+    }
+}
+endsnippet
