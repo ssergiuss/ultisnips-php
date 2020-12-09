@@ -1,0 +1,66 @@
+priority -40
+
+snippet zentconfig "Zend1 / Manager / EntityManager" b
+<?php
+/**
+ * This file is part of the Partfiniti package.
+ *
+ * @copyright Copyright (c) 2020 Partfiniti Inc. (https://www.partfiniti.com)
+ */
+
+/**
+ * ${1} Manager
+ *
+ * @author Sergiu-Ioan Ungur
+ *
+ * @see ${2:Base_EntityManager}
+ */
+class ${3}_`!p snip.rv = snip.basename or "EntityManager"` extends ${2:Base_EntityManager}
+{
+		    /**
+     * {@inheritdoc}
+     */
+    protected function getEntityConfig()
+    {
+        return Utils_Class::get('${4}');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getCreateFields()
+    {
+        return [${5:
+            'company_id',
+            'user_id'
+        }];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getUpdateFields()
+    {
+        return [${6:
+            'email',
+            'name'
+        }];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getUniqueConstraints()
+    {
+        return [{7:[
+            'fields' => [
+                'company_id',
+                'email'
+            ],
+            'message' => $this->translator->get(
+                'error_' . $this->entityConfig->get('entity_name') . '_already_exists'
+            )
+        ]}];
+    }
+}
+endsnippet
