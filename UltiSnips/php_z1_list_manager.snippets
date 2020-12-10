@@ -20,7 +20,7 @@ class ${3}_`!p snip.rv = snip.basename or "EntityListManager"` extends ${2:Base_
      */
     protected function getBaseSelect(array $fields = null, $group = null)
     {
-				// TODO
+        // TODO
         return parent::getBaseSelect($fields, $group)
             ->join('company', 'company.id = ' . $this->table . '.company_id', []);
     }
@@ -30,22 +30,11 @@ class ${3}_`!p snip.rv = snip.basename or "EntityListManager"` extends ${2:Base_
      */
     protected function getFields()
     {
-				// TODO
+        // TODO
         return [
             'id'           => $this->table . '.id',
             'name'         => $this->table . '.name',
             'company_name' => 'company.name'
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function getFieldsMapping()
-    {
-				// TODO
-        return [
-            'company_address_name' => 'company.address_name'
         ];
     }
 
@@ -81,6 +70,17 @@ class ${3}_`!p snip.rv = snip.basename or "EntityListManager"` extends ${2:Base_
             'email',
             'name',
             'company_name'
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getFieldsMapping()
+    {
+        // TODO
+        return [
+            'company_address_name' => 'company.address_name'
         ];
     }
 
