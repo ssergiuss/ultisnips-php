@@ -20,6 +20,12 @@ snippet dbd "Utils / Debugger - Dump" b
 Utils_Debugger::dump('${1}', $$1);
 endsnippet
 
+snippet dbbd "Utils / Debugger - Block - Dump" b
+// TODO remove
+Utils_Debugger::dump('${1}', $$1);
+Utils_Debugger::stop();
+endsnippet
+
 snippet dbdp "Utils / Debugger - Dump on Page" b
 Utils_Debugger::dumpOnPage('${1}', $$1);
 endsnippet
