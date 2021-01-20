@@ -17,5 +17,17 @@ snippet td? "Utils / TODO???" b
 endsnippet
 
 snippet dbd "Utils / Debugger - Dump" b
-Utils_Debugger::dump('${1}', $1);
+Utils_Debugger::dump('${1}', $$1);
+endsnippet
+
+snippet dbdp "Utils / Debugger - Dump on Page" b
+Utils_Debugger::dumpOnPage('${1}', $$1);
+endsnippet
+
+snippet dbl "Utils / Debugger - Log" b
+Utils_Debugger::log('${1}', $$1);
+endsnippet
+
+snippet dbs "Utils / Debugger - Stop" b
+Utils_Debugger::stop();
 endsnippet
