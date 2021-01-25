@@ -1,0 +1,47 @@
+priority -40
+
+snippet zprocreccliserv "Zend1 / Service / CLI / Process Records Service" b
+<?php
+/**
+ * This file is part of the Partfiniti package.
+ *
+ * @copyright Copyright (c) `!v strftime("%Y")` Partfiniti Inc. (https://www.partfiniti.com)
+ */
+
+/**
+ * ${1} CLI Service
+ *
+ * @author Sergiu-Ioan Ungur
+ *
+ * @see ${2:Cli_BaseProcessRecordsService}
+ */
+class ${3:Cli}_`!p snip.rv = snip.basename or "ProcessRecordsService"` extends $2
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected function processRecord(
+        Base_Entity $record,
+        array $data,
+        array $options
+    ) {
+        // TODO return 0 -> fixed, 1 -> skipped, 2 -> error
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getCriteria(array $data, array $options)
+    {
+        // TODO return array
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getEntityConfig()
+    {
+        return Utils_Class::get('${4}');
+    }
+}
+endsnippet
