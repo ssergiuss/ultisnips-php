@@ -39,9 +39,17 @@ class ${3:Cli}_`!p snip.rv = snip.basename or "ProcessRecordsService"` extends $
     /**
      * {@inheritdoc}
      */
+    protected function getJobName()
+    {
+        return '${4}';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     protected function getEntityConfig()
     {
-        return Utils_Class::get('${4}');
+        return Utils_Class::get('${5}');
     }
 }
 endsnippet
