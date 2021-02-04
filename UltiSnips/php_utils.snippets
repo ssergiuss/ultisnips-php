@@ -64,6 +64,13 @@ snippet prsv "Utils / Class / Protected Static Var" b
 protected $${2};
 endsnippet
 
+snippet const "Utils / Class / Constant" b
+/**
+ * @const ${1}
+ */
+const $1 = ${2};
+endsnippet
+
 snippet vin "Utils / Class / Var Initialize" b
 $this->${1} = Utils_Class::get('${2}');
 endsnippet
