@@ -20,6 +20,10 @@ snippet tduc "Utils / TODO uncomment" b
 // TODO uncomment
 endsnippet
 
+snippet db "Utils / Debugger"
+Utils_Debugger::${1:method($params)}
+endsnippet
+
 snippet dbd "Utils / Debugger / Dump" b
 Utils_Debugger::dump('${1}', $$1);
 endsnippet
@@ -46,6 +50,18 @@ endsnippet
 
 snippet dbs "Utils / Debugger / Stop" b
 Utils_Debugger::stop();
+endsnippet
+
+snippet statim "Utils / Debugger / Start Timer" b
+Utils_Debugger::startTimer('${1:identifier}');
+endsnippet
+
+snippet stotim "Utils / Debugger / Stop Timer" b
+Utils_Debugger::stopTimer('${1:identifier}');
+endsnippet
+
+snippet dblte "Utils / Debugger / Log Time Elapsed" b
+Utils_Debugger::logTimeElapsed('${1:message}', '${2:identifier}');
 endsnippet
 
 snippet prv "Utils / Class / Protected Var" b
