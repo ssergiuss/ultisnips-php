@@ -13,7 +13,7 @@ snippet zentconfig "Zend1 / Config / EntityConfig" b
  *
  * @author Sergiu-Ioan Ungur
  *
- * @see ${2:Base_V2_EntityConfig}
+ * @see $2
  */
 class ${3}_`!p snip.rv = snip.basename or "EntityConfig"` extends ${2:Base_V2_EntityConfig}
 {
@@ -26,7 +26,7 @@ class ${3}_`!p snip.rv = snip.basename or "EntityConfig"` extends ${2:Base_V2_En
 
         $this->extendOptions([
             'entity_name'  => '${4}',
-            'entity_class' => '${5}'
+            'entity_class' => '${5}',
         ]);
 
         return $this;

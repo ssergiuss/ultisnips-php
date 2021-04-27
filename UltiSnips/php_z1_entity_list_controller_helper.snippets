@@ -9,11 +9,11 @@ snippet zelistcontrollerhelper "Zend1 / Controller / EntityListControllerHelper"
  */
 
 /**
- * ${1} List Controller Helper
+ * ${1} List Controller Helper.
  *
  * @author Sergiu-Ioan Ungur
  *
- * @see ${2:Base_EntityListControllerHelper}
+ * @see $2
  */
 class ${3}_ControllerHelper_`!p snip.rv = snip.basename or "EntityList"` extends ${2:Base_EntityListControllerHelper}
 {
@@ -24,7 +24,7 @@ class ${3}_ControllerHelper_`!p snip.rv = snip.basename or "EntityList"` extends
     {
         // TODO
         return array_replace(parent::processRecordListViewBy($viewBy), [
-            'company' => $this->company
+            'company' => $this->company,
         ]);
     }
 

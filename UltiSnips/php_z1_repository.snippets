@@ -9,11 +9,11 @@ snippet zrepository "Zend1 / Model / Repository" b
  */
 
 /**
- * ${1} Repository
+ * ${1} Repository.
  *
  * @author Sergiu-Ioan Ungur
  *
- * @see ${2:Base_EntityRepository}
+ * @see $2
  */
 class ${3}_`!p snip.rv = snip.basename or "Repository"` extends ${2:Base_EntityRepository}
 {
@@ -26,13 +26,13 @@ class ${3}_`!p snip.rv = snip.basename or "Repository"` extends ${2:Base_EntityR
             ${5:'Company' => [
                 'columns'       => 'company_id',
                 'refTableClass' => 'Corporate_Companies',
-                'refColumns'    => 'id'
+                'refColumns'    => 'id',
             ],
             'User' => [
                 'columns'       => 'user_id',
                 'refTableClass' => 'Auth_Users',
-                'refColumns'    => 'id'
-            ]}
+                'refColumns'    => 'id',
+            ],}
         ];
     }
 
